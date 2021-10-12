@@ -1,6 +1,6 @@
 Program składa się z serwera proxy i klienta.
 
-Serwer może łączyć się z podanym strumieniem radiowym i wypisywać go na wejście (które można przekierować do konkretnego pliku) bądź obsługiwać klientów.
+Serwer może łączyć się z podanym strumieniem radiowym i wypisywać go na wyjście (które można przekierować do konkretnego pliku) bądź obsługiwać klientów.
 
 Klient wyszukuje serwery w sieci i po podłączeniu się do danego może otrzymywać strumień audio (również przekierowuje go na STDOUT).
 Klient jest obsługiwany przez program Telnet, który łączy się do niego przez TCP.
