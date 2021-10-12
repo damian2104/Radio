@@ -1,0 +1,19 @@
+Program składa się z serwera proxy i klienta.
+
+Serwer może łączyć się z podanym strumieniem radiowym i wypisywać go na wejście (które można przekierować do konkretnego pliku) bądź obsługiwać klientów.
+
+Klient wyszukuje serwery w sieci i po podłączeniu się do danego może otrzymywać strumień audio (również przekierowuje go na STDOUT).
+Klient jest obsługiwany przez program Telnet, który łączy się do niego przez TCP.
+
+Przykładowe uruchomienie:
+
+./radio-proxy -h sc2.readycast.org -p 8850 -r / -P 10001
+(-h link audio, -p numer portu audio, -P numer portu UDP dla klienta, -r zasób)
+
+./radio-client -H 0.0.0.0 -P 10001 -p 10009 > plik.mp3
+(-P port UDP (serwera), -p port TCP dla Telnetu)
+
+telnet 0.0.0.0 10009
+(łączy się z klientem na porcie 10009)
+
+W telnecie należy wybrać opcję "Szukaj pośrednika", następnie wyświetlą się dostępne serwery proxy. Po wybraniu któregoś i kliknięciu enter do pliku plik.mp3 będzie zapisywał się strumień audio, który można na bieżąco odtwarzać.
